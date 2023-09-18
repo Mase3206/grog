@@ -1,0 +1,36 @@
+# 0: English (AC3) (2.0 ch) (192 kbps)
+Track 1:
+  Name: English (2.0)
+  Track: 1
+  Codec: av_aac
+  Mixdown: stereo
+  Samplerate: auto
+  Bitrate: 192
+  Gain: 0
+  DRC: 0
+  Dither Method: 0
+
+# 1: English (AC3) (5.1 ch) (448 kbps)
+Track 2:
+  Name: English (5.1)
+  Track: 2
+  Codec: av_aac
+  Mixdown: 5point1
+  Samplerate: auto
+  Bitrate: 448
+  Gain: 0
+  DRC: 0
+  Dither Method: 0
+
+
+# 2: English (AC3) (2.0 ch) (192 kbps)
+Track 3: 
+  Name: English (Commentary)
+  Track: 3
+  Codec: av_aac
+  Mixdown: stereo
+  Samplerate: auto
+  Bitrate: 192
+  Gain: 0
+  DRC: 0
+  Dither Method: 0

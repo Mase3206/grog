@@ -1,0 +1,98 @@
+# Make sure all single quotes (') are escaped with a backslash (\)
+# EX: The Time Traveler\'s Pig
+
+Title-1:
+  Name: Title Screen
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 
+  Keep Chapters: 
+  Audio: 
+  Video: 
+  Subtitles: 
+  Rip: False
+
+Title-2:
+  Name: Episodes 15-24 nonstop
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 
+  Keep Chapters:
+  Audio: 
+  Video: 
+  Subtitles: 
+  Rip: False
+
+Title-3:
+  Name: 
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-4:
+  Name: 
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-5:
+  Name: 
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-6:
+  Name: 
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-7:
+  Name: 
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-8:
+  Name: 
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
