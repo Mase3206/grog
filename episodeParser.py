@@ -46,15 +46,7 @@ def makeDiskName(episode):
 
 
 def makeFileName(episode, episodeData):
-
-	if environment == 'Unix':
-		# Unix file path
-		episodeFileName = ['Episodes/Season-', episodeData['Season'], '/C', episode[0], 'D', episode[1], 'T', episode[2], '_S', episodeData['Season'], 'E', episodeData['Episode'], ' - ', episodeData['Name'], fileExtension]
-	elif environment == 'Windows':
-		# Windows file path
-		episodeFileName = ['Episodes\\Season-', episodeData['Season'], '\\C', episode[0], 'D', episode[1], 'T', episode[2], '_S', episodeData['Season'], 'E', episodeData['Episode'], ' - ', episodeData['Name'], fileExtension]
-	else:
-		raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')
+	episodeFileName = ['Episodes/Season-', episodeData['Season'], '/C', episode[0], 'D', episode[1], 'T', episode[2], '_S', episodeData['Season'], 'E', episodeData['Episode'], ' - ', episodeData['Name'], fileExtension]
 
 
 	# make sure all elements are strings
@@ -106,14 +98,7 @@ def getEpisodeInformation(episode):
 
 
 def makeEpisodeFile(episode):
-	if environment == 'Unix':
-		# Unix file path
-		fileTemplate = ['cases', ['/case', ''], ['/disk', ''], '.yml']
-	elif environment == 'Windows':
-		# Windows file path
-		fileTemplate = ['cases', ['\\case', ''], ['\\disk', ''], '.yml']
-	else:
-		raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')
+	fileTemplate = ['cases', ['/case', ''], ['/disk', ''], '.yml']
 	
 	for i in range(2):
 		fileTemplate[i + 1][1] = episode[i]

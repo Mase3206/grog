@@ -1,6 +1,7 @@
 Audio Track Quantity: '3'
 Encoder: x264
-Environment: Unix
-Episode List Location: Episodes/episode_list.csv
+Environment: Unix                                     # currently doesn't affect operation, so just ignore it for now; it will be used later
+Episode List name: Episodes/episode_list.csv          # always in Episode Output Directory
 HandBrakeCLI Executible Location: ./HandBrake/HandBrakeCLI.exe
 Preset Location: Gravity Falls (Windows).json
+Episode Output Directory: Episodes

@@ -20,23 +20,12 @@ def allEpisodes(numberOfEpisodes, episodeNumber):
 	environment = rawSettings['Environment']
 
 
-	# use dfferent paths for Windows/Unix
-	if environment == 'Unix':
-		# open csv of episodes to rip
-		with open('Episodes/episode_list.csv', 'r') as csvfile1:
-			episodeList = csv.reader(csvfile1, delimiter=',')
+	# open csv of episodes to rip
+	with open('Episodes/episode_list.csv', 'r') as csvfile1:
+		episodeList = csv.reader(csvfile1, delimiter=',')
 
-			for row in episodeList:
-				episodes.append(row)
-	elif environment == 'Windows':
-		# open csv of episodes to rip
-		with open('Episodes\\episode_list.csv', 'r') as csvfile1:
-			episodeList = csv.reader(csvfile1, delimiter=',')
-
-			for row in episodeList:
-				episodes.append(row)
-	else:
-		raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')
+		for row in episodeList:
+			episodes.append(row)
 
 
 	# assemble full command
