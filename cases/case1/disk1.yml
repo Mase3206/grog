@@ -1,0 +1,95 @@
+Title-1:
+  Name: Title Screen
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 
+  Keep Chapters: 
+  Audio: 
+  Video: 
+  Subtitles: 
+  Rip: False
+
+Title-2:
+  Name: Episodes 1-6 nonstop
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 
+  Keep Chapters:
+  Audio: 
+  Video: 
+  Subtitles: 
+  Rip: False
+
+Title-3:
+  Name: Tourist Trapped
+  Aired: 2012-06-15
+  Season: 1
+  Episode: 1
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-4:
+  Name: The Legend of the Gobblewonker
+  Aired: 2012-06-29
+  Season: 1
+  Episode: 2
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-5:
+  Name: Headhunters
+  Aired: 2012-06-30
+  Season: 1
+  Episode: 3
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-6:
+  Name: The Hand that Rocks the Mabel
+  Aired: 2012-07-06
+  Season: 1
+  Episode: 4
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-7:
+  Name: The Inconveniencing
+  Aired: 2012-07-13
+  Season: 1
+  Episode: 5
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-8:
+  Name: Dipper vs. Manliness
+  Aired: 2012-07-20
+  Season: 1
+  Episode: 6
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True

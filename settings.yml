@@ -1,0 +1,6 @@
+Audio Track Quantity: '3'
+Encoder: x264
+Environment: Unix
+Episode List Location: Episodes/episode_list.csv
+HandBrakeCLI Executible Location: ./HandBrake/HandBrakeCLI.exe
+Preset Location: Gravity Falls (Windows).json

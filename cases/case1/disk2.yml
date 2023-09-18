@@ -1,0 +1,122 @@
+# Make sure all string delimiters (' or ") are escaped with a backslash (\)
+# EX: The Time Traveler\'s Pig
+
+Title-1:
+  Name: Title Screen
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 
+  Keep Chapters: 
+  Audio: 
+  Video: 
+  Subtitles: 
+  Rip: False
+
+Title-2:
+  Name: Episodes 7-14 nonstop
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 
+  Keep Chapters:
+  Audio: 
+  Video: 
+  Subtitles: 
+  Rip: False
+
+Title-3:
+  Name: Double Dipper
+  Aired: 2012-08-12
+  Season: 1
+  Episode: 7
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-4:
+  Name: Irrational Treasure
+  Aired: 2012-08-17
+  Season: 1
+  Episode: 8
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-5:
+  Name: The Time Traveler\'s Pig
+  Aired: 2012-08-24
+  Season: 1
+  Episode: 9
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-6:
+  Name: Fight Fighters
+  Aired: 2012-09-14
+  Season: 1
+  Episode: 10
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-7:
+  Name: Little Dipper
+  Aired: 2012-09-28
+  Season: 1
+  Episode: 11
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-8:
+  Name: Summerween
+  Aired: 2012-10-05
+  Season: 1
+  Episode: 12
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-9:
+  Name: Boss Mabel
+  Aired: 2013-02-15
+  Season: 1
+  Episode: 13
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-10:
+  Name: Double Dipper + commentary
+  Aired: 
+  Season: 1
+  Episode: 7
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True

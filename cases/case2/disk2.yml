@@ -1,0 +1,122 @@
+# Make sure all single quotes (') are escaped with a backslash (\)
+# EX: The Time Traveler\'s Pig
+
+Title-1:
+  Name: Title Screen
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 
+  Keep Chapters: 
+  Audio: 
+  Video: 
+  Subtitles: 
+  Rip: False
+
+Title-2:
+  Name: Episodes 8-14 nonstop
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 
+  Keep Chapters:
+  Audio: 
+  Video: 
+  Subtitles: 
+  Rip: False
+
+Title-3:
+  Name: Blendin\'s Game
+  Aired: 2014-11-10
+  Season: 2
+  Episode: 8
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-4:
+  Name: The Love God
+  Aired: 2014-11-26
+  Season: 2
+  Episode: 9
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-5:
+  Name: Northwest Mansion Mystery
+  Aired: 2015-02-16
+  Season: 2
+  Episode: 10
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-6:
+  Name: Not What He Seems
+  Aired: 2015-03-09
+  Season: 2
+  Episode: 11
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-7:
+  Name: A Tale of Two Stans
+  Aired: 2015-07-13
+  Season: 2
+  Episode: 12
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-8:
+  Name: Dungeons, Dungeons, & More Dungeons
+  Aired: 2015-08-03
+  Season: 2
+  Episode: 13
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-9:
+  Name: The Stanchurian Candidate
+  Aired: 2015-08-24
+  Season: 
+  Episode: 
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-10:
+  Name: Not What He Seems + commentary
+  Aired: 
+  Season: 2
+  Episode: 11
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True

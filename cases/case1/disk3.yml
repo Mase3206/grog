@@ -1,0 +1,122 @@
+# Make sure all single quotes (') are escaped with a backslash (\)
+# EX: The Time Traveler\'s Pig
+
+Title-1:
+  Name: Title Screen
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 
+  Keep Chapters: 
+  Audio: 
+  Video: 
+  Subtitles: 
+  Rip: False
+
+Title-2:
+  Name: Episodes 15-20 nonstop
+  Aired: 
+  Season: 
+  Episode: 
+  Chapters: 
+  Keep Chapters:
+  Audio: 
+  Video: 
+  Subtitles: 
+  Rip: False
+
+Title-3:
+  Name: Bottomless Pit!
+  Aired: 2013-03-01
+  Season: 1
+  Episode: 14
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-4:
+  Name: The Deep End
+  Aired: 2013-03-25
+  Season: 1
+  Episode: 15
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-5:
+  Name: Carpet Diem
+  Aired: 2013-04-05
+  Season: 1
+  Episode: 16
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-6:
+  Name: Boyz Crazy
+  Aired: 2013-04-19
+  Season: 1
+  Episode: 17
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-7:
+  Name: Land Before Swine
+  Aired: 2013-06-28
+  Season: 1
+  Episode: 18
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-8:
+  Name: Dreamscaperers
+  Aired: 2013-07-12
+  Season: 1
+  Episode: 19
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-9:
+  Name: Gideon Rises
+  Aired: 2013-08-02
+  Season: 1
+  Episode: 20
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
+
+Title-10:
+  Name: Land Before Swine + commentary
+  Aired: 
+  Season: 1
+  Episode: 18
+  Chapters: 1-6   # low (inclusive) - high (inclusive)
+  Keep Chapters: True
+  Audio: Default
+  Video: Default
+  Subtitles: Default
+  Rip: True
