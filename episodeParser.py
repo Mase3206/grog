@@ -46,7 +46,7 @@ def makeDiskName(episode):
 
 
 def makeFileName(episode, episodeData):
-	episodeFileName = ['Episodes/Season-', episodeData['Season'], '/C', episode[0], 'D', episode[1], 'T', episode[2], '_S', episodeData['Season'], 'E', episodeData['Episode'], ' - ', episodeData['Name'], fileExtension]
+	episodeFileName = [rawSettings['Episode Output Directory'], '/Season-', episodeData['Season'], '/C', episode[0], 'D', episode[1], 'T', episode[2], '_S', episodeData['Season'], 'E', episodeData['Episode'], ' - ', episodeData['Name'], fileExtension]
 
 
 	# make sure all elements are strings

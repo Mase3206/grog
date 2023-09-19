@@ -18,12 +18,8 @@ if __name__ == '__main__':
 	exit(0)
 
 
-# Unix file path
 with open('profiles/defaultAudio.yml', 'r') as file1:
 	defaultAudio = yaml.safe_load(file1)
-
-
-
 
 
 
