@@ -1,6 +1,6 @@
 Audio Track Quantity: '3'
-Encoder: x264
-Environment: Unix                                     # currently doesn't affect operation, so just ignore it for now; it will be used later
+Encoder:    # found in profiles/defaultVideo.yml
+Environment: Unix                            # currently doesn't affect operation, so just ignore it for now; it will be used later
 Episode List name: episode_list.csv          # always in Episode Output Directory
 HandBrakeCLI Executible Location: ./HandBrake/HandBrakeCLI.exe
 Episode Output Directory: Episodes

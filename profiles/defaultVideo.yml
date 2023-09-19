@@ -1,80 +1,47 @@
-
-
 Summary:
   Format: av_mkv
   Extension: .mkv
-  PTCM: True      # pass through common metadata
 
 
-Dimensions:
-  Flip Horiz: False
-  Rotation: 0
-  Cropping:
-  - 0             # top
-  - 0             # right
-  - 0             # bottom
-  - 0             # left
+Video Settings:
+  Encoder: x265
+  Encoder Preset: veryslow
+  Encoder Tune: animation
+  Encoder Profile: main
+  Encoder Level: auto
 
-  # Resolution and Scaling
-  Resolution Limit: "720p HD"
-  Anamorphic: "Automatic"
-  Pixel Aspect:
-  - 1
-  - 1
-  Scaled Size:
-  - 1280
-  - 720
-  Optimal Size: True
-  Allow Upscaling: True
-
-  # Borders
-  Fill: 
-  - 0    # top
-  - 0    # right
-  - 0    # bottom
-  - 0    # left
-  Color: "Black"
-
-  # Final Dimensions
-  Automatic: True
-  
-
-Filters:
-  Detelecine: "Off"
-
-  Interlace Detection: "Default"
-  Deinterlace: "Off"
-
-  Deblock: "Off"
-  Denoise: 
-    # spacial
-  - 0     # y
-  - 0     # cb
-  - 0     # cr
-    # temporal
-  - 8     # y
-  - 8     # cb
-  - 8     # cr
-  Chroma Smooth: "Off"
-  Sharpen: "Off"
-
-  Colorspace: "Off"
-  Grayscale: False
+  Constant Quality: 18
+  Framerate: 23.976
+  Constant Framerate: Yes
 
 
-Video:
-  Video Encoder: "H.265 (NVENC)"
-  Framerate: 
-  - 23.976
-  - "Constant"
-  Quality: 
-  - "Constant"
-  - 18
+Picture Settings:
+  Width:        # leave empty for auto
+  Height:       # leave empty for auto
+  Crop Mode: none
+  Anamorphic: auto
 
-  # Encoder options
-  Preset: "quality"
-  Tune: "none"
-  Profile: "auto"
-  Level: "auto"
-  Additional Options: ""
 
+Filter Settings:
+  Comb Detect: off      #
+  Decomb: off           #
+  Deinterlace: off      # off, yadif, decomb, bwdif
+  Detelecine: off       # off, custom, or default
+  Chroma Smoothing: off # 
+  Sharpen: off          # off, unsharp, or lapsharp
+  Deblock: off          # off, custom, ultralight, light, medium, strong, stronger, verystrong
+  Denoise: hqdn3d       # off, nlmeans, hqdn3d
+  Grayscale: No         # No, Yes
+  Colorspace: off       # off == auto
+
+  Custom Settings:
+    Denoise Settings: # if hqdn3d is selected
+      HQDN3D:
+        Spacial:
+        - 0   # y
+        - 0   # cb
+        - 0   # cr
+        Temporal:
+        - 8   # y
+        - 8   # cb
+        - 8   # cr
