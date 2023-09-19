@@ -21,7 +21,7 @@ def allEpisodes(numberOfEpisodes, episodeNumber):
 
 
 	# open csv of episodes to rip
-	with open('Episodes/episode_list.csv', 'r') as csvfile1:
+	with open(''.join(rawSettings['Episode Output Directory'], '/episode_list.csv'), 'r') as csvfile1:
 		episodeList = csv.reader(csvfile1, delimiter=',')
 
 		for row in episodeList:
