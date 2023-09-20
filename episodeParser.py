@@ -28,16 +28,10 @@ environment = rawSettings['Environment']
 
 
 def makeDiskName(episode):
-	if environment == 'Unix':
-		# Unix file path
-		diskName = ['disks/c', episode[0], 'd', episode[1], '.iso']
-		return ''.join(diskName)
-	elif environment == 'Windows':
-		# Windows file path
-		diskName = ['disks\\c', episode[0], 'd', episode[1], '.iso']
-		return ''.join(diskName)
-	else:
-		raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')
+	# Unix file path
+	diskName = ['disks/c', episode[0], 'd', episode[1], '.iso']
+	return ''.join(diskName)
+
 	
 
 

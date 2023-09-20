@@ -70,3 +70,4 @@ def getVideoCommand():
 		outputArgs[i*2+1] = fetchedSettings[i]
 	
 	return outputArgs
+
