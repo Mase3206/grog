@@ -8,22 +8,23 @@ def hqdn3d(settings):
 
 	for i in range(3):
 		hqdn3dSettings[i*2+1] = str(spacial[i])
-		hqdn3dSettings[i*2+4] = str(temporal[i])
+		hqdn3dSettings[i*2+7] = str(temporal[i])
 
-	return hqdn3dSettings
+	return ''.join(hqdn3dSettings)
 
-a = {
-	'Spacial': [
-		0,
-		0,
-		0
-	],
-	'Temporal': [
-		8,
-		8,
-		8
-	]
-}
 
-print(hqdn3d(a))
+if __name__ == '__main__':
+	a = {
+		'Spacial': [
+			0,
+			0,
+			0
+		],
+		'Temporal': [
+			8,
+			8,
+			8
+		]
+	}
 
+	print(hqdn3d(a))

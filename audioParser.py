@@ -18,7 +18,7 @@ if __name__ == '__main__':
 	exit(0)
 
 
-with open('profiles/defaultAudio.yml', 'r') as file1:
+with open('profiles/audio.yml', 'r') as file1:
 	defaultAudio = yaml.safe_load(file1)
 
 

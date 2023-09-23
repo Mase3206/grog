@@ -1,0 +1,32 @@
+# Orientation and Cropping
+Horizontal Flipping: No
+Rotation: 0   
+Crop:
+- 0   # top
+- 0   # right
+- 0   # bottom
+- 0   # left
+
+
+# Resolution and Scaling
+Resolution Limit:
+  W: 720
+  H: 480
+
+Optimal Size: Yes
+Allow Upscaling: No
+  Scaled Size:
+    W: 
+    H: 
+
+Anamorphic: auto    # automatic is recommended
+  Pixel Aspect:     # ex: 32:27
+
+
+# Borders
+Fill:
+- 0   # top
+- 0   # right
+- 0   # bottom
+- 0   # left
+Color: black    # black, darkgray, gray, white, or custom hex

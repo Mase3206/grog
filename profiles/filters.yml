@@ -1,0 +1,22 @@
+Comb Detect: off      #
+Decomb: off           #
+Deinterlace: off      # off, yadif, decomb, bwdif
+Detelecine: off       # off, custom, or default
+Chroma Smoothing: off # 
+Sharpen: off          # off, unsharp, or lapsharp
+Deblock: off          # off, custom, ultralight, light, medium, strong, stronger, verystrong
+Denoise: hqdn3d       # off, nlmeans, hqdn3d
+Grayscale: No         # No, Yes
+Colorspace: off       # off == auto
+
+# Custom Settings
+Denoise Settings: # if hqdn3d is selected
+  HQDN3D:
+    Spacial:
+    - 0   # y
+    - 0   # cb
+    - 0   # cr
+    Temporal:
+    - 8   # y
+    - 8   # cb
+    - 8   # cr

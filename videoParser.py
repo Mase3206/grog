@@ -14,14 +14,17 @@ with open('profiles/defaultVideo.yml', 'r') as file1:
 
 videoOutputArgs = ['-e', '', '--encoder-preset', '', '--encoder-tune', '', '--encoder-profile', '', '--encoder-level', '', '-q', '', '-r', '', '', ]
 pictureOutputArgs = ['-w', '', '-h', '', '--crop-mode', '', '']
-filterOutputArgs = ['', '', '', '', '', '', '--no-unsharp', '--no-lapsharp', '--no-deblock', '--no-grayscale']
+filterOutputArgs = ['', '', '', '', '', '', '', '', '', '', '']
 
 
 def getVideoCommand():
+	videoOutputArgs = ['-e', '', '--encoder-preset', '', '--encoder-tune', '', '--encoder-profile', '', '--encoder-level', '', '-q', '', '-r', '', '', ]
+	pictureOutputArgs = ['--crop-mode', '', '']
+	filterOutputArgs = ['', '', '', '', '', '', '', '', '', '', '']
+
 	fetchedSettingsVideo = []
 	fetchedSettingsPicture = []
 	fetchedSettingsFilter = []
-	fetchedSettingsHQDN3D = []
 	outputArgs = []
 
 
@@ -42,15 +45,15 @@ def getVideoCommand():
 
 
 	# Picture Output Args
-	if defaultVideo['Picture Settings']['Width'] != '':
+	if defaultVideo['Picture Settings']['Width'] != 'auto':
 		fetchedSettingsPicture.append(defaultVideo['Picture Settings']['Width'])
-	else:
-		fetchedSettingsPicture.append('')
+		pictureOutputArgs.append('-w')
+
 	
-	if defaultVideo['Picture Settings']['Height'] != '':
+	if defaultVideo['Picture Settings']['Height'] != 'auto':
 		fetchedSettingsPicture.append(defaultVideo['Picture Settings']['Height'])
-	else:
-		fetchedSettingsPicture.append('')
+		pictureOutputArgs.append('-h')
+
 
 	fetchedSettingsPicture.append(defaultVideo['Picture Settings']['Crop Mode'])
 
@@ -58,11 +61,54 @@ def getVideoCommand():
 		fetchedSettingsPicture.append('--auto-anamorphic')
 
 
+
 	# Filter Output Args
 
+	# comb detect
+	if bool(defaultVideo['Filter Settings']['Comb Detect']) == False:
+		fetchedSettingsFilter.append('--no-comb-detect')
+
+	# decomb
+	if bool(defaultVideo['Filter Settings']['Decomb']) == False:
+		fetchedSettingsFilter.append('--no-decomb')
+
+	# deinterlace
+	if bool(defaultVideo['Filter Settings']['Deinterlace']) == False:
+		fetchedSettingsFilter.append('--no-deinterlace')
+
+	# detelecine
+	if bool(defaultVideo['Filter Settings']['Detelecine']) == False:
+		fetchedSettingsFilter.append('--no-detelecine')
+
+	# detelecine
+	if bool(defaultVideo['Filter Settings']['Chroma Smoothing']) == False:
+		fetchedSettingsFilter.append('--no-chroma-smooth')
+
+	# detelecine
+	if bool(defaultVideo['Filter Settings']['Sharpen']) == False:
+		fetchedSettingsFilter.append('--no-unsharp')
+		fetchedSettingsFilter.append('--no-lapsharp')
+
+	# detelecine
+	if bool(defaultVideo['Filter Settings']['Deblock']) == False:
+		fetchedSettingsFilter.append('--no-deblock')
+
+	# detelecine
+	if bool(defaultVideo['Filter Settings']['Grayscale']) == False:
+		fetchedSettingsFilter.append('--no-grayscale')
+
+	# denoise
 	if defaultVideo['Filter Settings']['Denoise'] == 'hqdn3d':
 		fetchedSettingsFilter.append('-8')
-		# put the actual values here
+		fetchedSettingsFilter.append(filterParser.hqdn3d(defaultVideo['Filter Settings']['Denoise Settings']['HQDN3D']))
+
+	
+	fetchedSettings.append(''.join(fetchedSettingsVideo))
+	fetchedSettings.append(''.join(fetchedSettingsPicture))
+	fetchedSettings.append(''.join(fetchedSettingsFilter))
+
+
+	
 
 
 
@@ -71,3 +117,5 @@ def getVideoCommand():
 	
 	return outputArgs
 
+if __name__ == '__main__':
+	print(getVideoCommand())

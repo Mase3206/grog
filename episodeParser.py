@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
 
 global fileFormat, fileExtension, environment
-with open('profiles/defaultVideo.yml', 'r') as file2:
+with open('profiles/video.yml', 'r') as file2:
 	defaultVideo = yaml.safe_load(file2)
 fileFormat = defaultVideo['Summary']['Format']
 fileExtension = defaultVideo['Summary']['Extension']
