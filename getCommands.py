@@ -1,9 +1,12 @@
-import csv, yaml, audioParser, episodeParser, videoParser, settings
+import csv, yaml, settings, audioParser, episodeParser, videoParser, filterParser
+from audioParser import getAudioTrackCommand as audio
+from episodeParser import getEpisodeCommand as episode
+from videoParser import getVideoCommand as video
+from filterParser import getFilterCommand as filtr
+from dimensionParser import getDimensionCommand as dim
 
 
-if __name__ == '__main__':
-	print('\nThis program is not meant to be run directly. Please instead call the functions within this program from another.\nExiting...\n')
-	exit(0)
+
 
 
 def allEpisodes(numberOfEpisodes, episodeNumber):
@@ -16,12 +19,11 @@ def allEpisodes(numberOfEpisodes, episodeNumber):
 
 	numberOfAudioTracks = int(rawSettings['Audio Track Quantity'])
 	HandBrakeCLI_execLocation = rawSettings['HandBrakeCLI Executible Location']
-	presetLocation = rawSettings['Preset Location']
 	environment = rawSettings['Environment']
 
 
 	# open csv of episodes to rip
-	with open(''.join(rawSettings['Episode Output Directory'], '/episode_list.csv'), 'r') as csvfile1:
+	with open(''.join([rawSettings['Episode Output Directory'], '/episode_list.csv']), 'r') as csvfile1:
 		episodeList = csv.reader(csvfile1, delimiter=',')
 
 		for row in episodeList:
@@ -30,18 +32,17 @@ def allEpisodes(numberOfEpisodes, episodeNumber):
 
 	# assemble full command
 	
-	audioParameters = audioParser.getAudioTrackCommand(numberOfAudioTracks)
-	episodeParameters = episodeParser.getEpisodeCommand(episodes[episodeNumber])
-	videoParameters = videoParser.getVideoCommand()
-
-	commandPrefix = [HandBrakeCLI_execLocation, '--preset-import-file', presetLocation]
-
+	episodeParameters = episode(episodes[episodeNumber])
 	if episodeParameters != False:
-		fullCommand = commandPrefix + audioParameters + episodeParameters + videoParameters
+		fullCommand = audio(numberOfAudioTracks) + episodeParameters + video() + filtr() + dim()
 	else:
 		fullCommand = False
 
-	if __name__ == '__main__':
-		print('\n', fullCommand, '\n')
-	elif __name__ != '__main__':
-		return fullCommand
+	return fullCommand
+
+
+if __name__ == '__main__':
+	#print('\nThis program is not meant to be run directly. Please instead call the functions within this program from another.\nExiting...\n')
+	#exit(0)
+
+	print('\n', allEpisodes(5, 3), '\n')

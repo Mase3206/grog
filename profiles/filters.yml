@@ -1,22 +1,111 @@
-Comb Detect: off      #
-Decomb: off           #
-Deinterlace: off      # off, yadif, decomb, bwdif
-Detelecine: off       # off, custom, or default
-Chroma Smoothing: off # 
-Sharpen: off          # off, unsharp, or lapsharp
-Deblock: off          # off, custom, ultralight, light, medium, strong, stronger, verystrong
-Denoise: hqdn3d       # off, nlmeans, hqdn3d
-Grayscale: No         # No, Yes
-Colorspace: off       # off == auto
+Comb Detect: 
+  Status: off             # off or on
+  Preset: custom                # permissive, fast, custom, or default
 
-# Custom Settings
-Denoise Settings: # if hqdn3d is selected
+  Custom: # all vaules are integers
+    Mode:                 # default = 3
+    Spacial Metric:       # default = 2
+    Motion Threshold:     # default = 1
+    Spacial Threshold:    # default = 1
+    Filter Mode:          # default = 2
+    Block Threshold:      # default = 40
+    Block Width:          # default = 16
+    Block Height:         # default = 16
+
+
+
+Decomb:
+  Status: off             # off or on
+  Preset: custom                # bob, eedi2, eedi2bob, custom, or default
+
+  Custom: # all values are integers
+    Mode:                 # default = 7
+    Magnitude Threshold:
+    Variance Threshold:
+    Laplacian Threshold:
+    Dilation Threshold:
+    Erosion Threshold:
+    Noise Threshold:
+    Search Distance:
+    Post-Processing:
+    Parity:
+
+
+
+Deinterlace:
+  Status: off
+
+
+
+Detelecine: 
+  Status: off
+
+
+
+Chroma Smoothing: 
+  Status: off
+  
+
+
+Sharpen: 
+  Status: off
+
+
+
+Deblock: 
+  Status: off
+
+
+
+Denoise:
+  Status: on             # off or on
+  Algorithm: hqdn3d       # hqdn3d or nlmeans
+  Preset: custom                # ultralight, light, medium, strong, custom, default
+
   HQDN3D:
     Spacial:
-    - 0   # y
-    - 0   # cb
-    - 0   # cr
+      Y: 0                 # default = 3
+      Cb: 0                # default = 2
+      Cr: 0                # default = 2
+
     Temporal:
-    - 8   # y
-    - 8   # cb
-    - 8   # cr
+      Y: 8                 # default = 2
+      Cb: 8                # default = 3
+      Cr: 8                # default = 3
+
+  NLmeans:
+    Y: # all values are integers
+      Strength:           # default = 6
+      Origin Tune:        # default = 1
+      Patch Size:         # default = 7
+      Range:              # default = 3
+      Frame Count:        # default = 2
+      Pre-filter:         # default = 0
+
+    Cb: # all values are integers
+      Strength:           # default = 6
+      Origin Tune:        # default = 1
+      Patch Size:         # default = 7
+      Range:              # default = 3
+      Frame Count:        # default = 2
+      Pre-filter:         # default = 0
+
+    Cr: # all values are integers
+      Strength: 
+      Origin Tune: 
+      Patch Size: 
+      Range: 
+      Frame Count: 
+      Pre-filter: 
+
+    Threads:
+
+
+
+Grayscale: 
+  Status: off
+
+
+
+Colorspace: 
+  Status: off

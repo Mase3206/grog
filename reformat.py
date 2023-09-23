@@ -35,7 +35,8 @@ def dic2lstlst(dic):
 	return list(map(list, zip(keys, values)))
 
 
-def prettyList(lstlst):
+def prettyDic(dic, new):
+	lstlst = dic2lstlst(dic)
 	out = []
 	for i in range(len(lstlst)):
 		temp = []
@@ -44,12 +45,21 @@ def prettyList(lstlst):
 		temp.append(str(lstlst[i][1]))
 
 		out.append(''.join(temp))
+	
+	out = '\n'.join(out)
 
-	return '\n'.join(out)
-
-
-def prettyDic(dic, new):
 	if new == True:
-		return ''.join(['\nNew settings: \n', prettyList(dic2lstlst(dic))])
+		return ''.join(['\nNew settings: \n', out])
 	else:
-		return ''.join(['\nCurrent settings: \n', prettyList(dic2lstlst(dic))])
+		return ''.join(['\nCurrent settings: \n', out])
+
+
+def allStr(lst):
+	if type(lst) != list:
+		lst = [lst]
+
+	for i in range(len(lst)):
+		lst[i] = str(lst[i])
+
+	return lst
+		

@@ -11,9 +11,9 @@ if __name__ == '__main__':
 
 global fileFormat, fileExtension, environment
 with open('profiles/video.yml', 'r') as file2:
-	defaultVideo = yaml.safe_load(file2)
-fileFormat = defaultVideo['Summary']['Format']
-fileExtension = defaultVideo['Summary']['Extension']
+	video = yaml.safe_load(file2)
+fileFormat = video['Format']
+fileExtension = video['Extension']
 
 rawSettings, prettySettings = settings.getSettings(False)
 environment = rawSettings['Environment']
