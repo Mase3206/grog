@@ -9,32 +9,21 @@ if __name__ == '__main__':
 
 
 
-global fileFormat, fileExtension, environment
+global fileFormat, fileExtension
 with open('profiles/video.yml', 'r') as file2:
 	video = yaml.safe_load(file2)
 fileFormat = video['Format']
 fileExtension = video['Extension']
 
 rawSettings, prettySettings = settings.getSettings(False)
-environment = rawSettings['Environment']
 
 
-"""if environment == 'Unix':
-		# code
-	elif environment == 'Windows':
-		# code
-	else:
-		raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')"""
 
 
 def makeDiskName(episode):
 	# Unix file path
 	diskName = ['disks/c', episode[0], 'd', episode[1], '.iso']
 	return ''.join(diskName)
-
-	
-
-
 
 	
 

@@ -1,16 +1,7 @@
 import yaml, reformat, settings
 
-global environment
 rawSettings, prettySettings = settings.getSettings(False)
-environment = rawSettings['Environment']
 
-
-"""if environment == 'Unix':
-		# code
-	elif environment == 'Windows':
-		# code
-	else:
-		raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')"""
 
 
 if __name__ == '__main__':

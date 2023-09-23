@@ -5,7 +5,7 @@ def combDetect(settings):
 
 	if bool(settings['Status']) != False:
 		if settings['Preset'] == 'custom':
-			values = ['--comb-detect=mode=', '', ':spacial-metric=', '', ':motion-thresh=', '', ':spacial-thresh=', '', ':filter-mode=', '', ':block-thresh=', '', ':block-width=', '', ':block-height=', '']
+			values = ['--comb-detect=mode=', '', ':spatial-metric=', '', ':motion-thresh=', '', ':spatial-thresh=', '', ':filter-mode=', '', ':block-thresh=', '', ':block-width=', '', ':block-height=', '']
 			keys = ['Mode', 'Spacial Metric', 'Motion Threshold', 'Spacial Threshold', 'Filter Mode', 'Block Threshold', 'Block Width', 'Block Height']
 
 			for i in range(len(keys)):
@@ -51,13 +51,14 @@ def decomb(settings):
 def denoise(settings):
 	def hqdn3d(settings, subsettings):
 		if settings['Preset'] == 'custom':
-			values = ['--hqdn3d=y-spacial', '', ':cb-spacial=', '', ':cr-spacial=', '', ':y-temporal=', '', ':cb-temporal=', '', ':cr-temporal=', '']
+			values = ['--hqdn3d=y-spatial=', '', ':cb-spatial=', '', ':cr-spatial=', '', ':y-temporal=', '', ':cb-temporal=', '', ':cr-temporal=', '']
 			keys = ['Y', 'Cb', 'Cr']
 
 			for i in range(len(keys)):
 				values[i*2+1] = subsettings['Spacial'][keys[i]]
 				values[i*2+7] = subsettings['Temporal'][keys[i]]
 			
+			#values.append('"')
 			return values
 		
 		elif subsettings['Preset'] == 'default':

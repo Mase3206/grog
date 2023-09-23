@@ -18,12 +18,12 @@ def allEpisodes(numberOfEpisodes, episodeNumber):
 	rawSettings, prettySettings = settings.getSettings(False)
 
 	numberOfAudioTracks = int(rawSettings['Audio Track Quantity'])
-	HandBrakeCLI_execLocation = rawSettings['HandBrakeCLI Executible Location']
+	
 	environment = rawSettings['Environment']
 
 
 	# open csv of episodes to rip
-	with open(''.join([rawSettings['Episode Output Directory'], '/episode_list.csv']), 'r') as csvfile1:
+	with open('/'.join([rawSettings['Episode Output Directory'], rawSettings['Episode List Name']]), 'r') as csvfile1:
 		episodeList = csv.reader(csvfile1, delimiter=',')
 
 		for row in episodeList:
@@ -34,7 +34,12 @@ def allEpisodes(numberOfEpisodes, episodeNumber):
 	
 	episodeParameters = episode(episodes[episodeNumber])
 	if episodeParameters != False:
-		fullCommand = audio(numberOfAudioTracks) + episodeParameters + video() + filtr() + dim()
+		if environment == 'Unix':			
+			fullCommand = ['HandBrakeCLI'] + audio(numberOfAudioTracks) + episodeParameters + video() + filtr() + dim()
+		elif environment == 'Windows':
+			fullCommand = [rawSettings['HandBrakeCLI Executible Location']] + audio(numberOfAudioTracks) + episodeParameters + video() + filtr() + dim()
+		else:
+			raise ValueError(''.join['settings.yml [\'Environment\'] must be set to either Unix or Windows, not ', environment], '.\nHalting...')
 	else:
 		fullCommand = False
 
