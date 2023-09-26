@@ -11,6 +11,7 @@ Default rip profiles for audio, video, filters, dimensions, and subtitles *(wip)
 Currently, the only releases available are for Windows, because that's what I use for transcoding (go NVENC!), but I will be publishing releases for other platforms once I have more time — and once this is more complete. However, because it's just Python 3 source, it will run on whatever platform can run HandBrakeCLI and Python. I believe I programmed it to look for system-wide installs of HandBrakeCLI in non-Windows OSs *as long as the `Executable Path:` key in ['settings.yml'] is set to `Unix`.* Also, if excecuting from source, `pyyaml` must be installed. It can be easily installed via `pip install pyyaml`.
 
 
+
 # Note for Windows users:
 
 The HandBrakeCLI executable should be placed in `/HandBrake/HandBrakeCLI.exe`, where `/` is the root of the release folder. If you would like to use a different location, you must change the `Executable Path:` key in [`settings.yml`].
