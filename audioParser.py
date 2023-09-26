@@ -1,35 +1,16 @@
 import yaml, reformat, settings
 
-global environment
 rawSettings, prettySettings = settings.getSettings(False)
-environment = rawSettings['Environment']
 
-
-"""if environment == 'Unix':
-		# code
-	elif environment == 'Windows':
-		# code
-	else:
-		raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')"""
 
 
 if __name__ == '__main__':
 	print('\nThis program is not meant to be run directly. Please instead call the functions within this program from another.\nExiting...\n')
 	exit(0)
 
-if environment == 'Unix':
-	# Unix file path
-	with open('profiles/defaultAudio.yml', 'r') as file1:
-		defaultAudio = yaml.safe_load(file1)
-elif environment == 'Windows':
-	# Windows file path
-	with open('profiles\\defaultAudio.yml', 'r') as file1:
-		defaultAudio = yaml.safe_load(file1)
-else:
-	raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')
 
-
-
+with open('profiles/audio.yml', 'r') as file1:
+	defaultAudio = yaml.safe_load(file1)
 
 
 

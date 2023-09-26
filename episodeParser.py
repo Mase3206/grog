@@ -9,52 +9,27 @@ if __name__ == '__main__':
 
 
 
-global fileFormat, fileExtension, environment
-with open('profiles/defaultVideo.yml', 'r') as file2:
-	defaultVideo = yaml.safe_load(file2)
-fileFormat = defaultVideo['Summary']['Format']
-fileExtension = defaultVideo['Summary']['Extension']
+global fileFormat, fileExtension
+with open('profiles/video.yml', 'r') as file2:
+	video = yaml.safe_load(file2)
+fileFormat = video['Format']
+fileExtension = video['Extension']
 
 rawSettings, prettySettings = settings.getSettings(False)
-environment = rawSettings['Environment']
 
 
-"""if environment == 'Unix':
-		# code
-	elif environment == 'Windows':
-		# code
-	else:
-		raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')"""
 
 
 def makeDiskName(episode):
-	if environment == 'Unix':
-		# Unix file path
-		diskName = ['disks/c', episode[0], 'd', episode[1], '.iso']
-		return ''.join(diskName)
-	elif environment == 'Windows':
-		# Windows file path
-		diskName = ['disks\\c', episode[0], 'd', episode[1], '.iso']
-		return ''.join(diskName)
-	else:
-		raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')
-	
-
-
+	# Unix file path
+	diskName = ['disks/c', episode[0], 'd', episode[1], '.iso']
+	return ''.join(diskName)
 
 	
 
 
 def makeFileName(episode, episodeData):
-
-	if environment == 'Unix':
-		# Unix file path
-		episodeFileName = ['Episodes/Season-', episodeData['Season'], '/C', episode[0], 'D', episode[1], 'T', episode[2], '_S', episodeData['Season'], 'E', episodeData['Episode'], ' - ', episodeData['Name'], fileExtension]
-	elif environment == 'Windows':
-		# Windows file path
-		episodeFileName = ['Episodes\\Season-', episodeData['Season'], '\\C', episode[0], 'D', episode[1], 'T', episode[2], '_S', episodeData['Season'], 'E', episodeData['Episode'], ' - ', episodeData['Name'], fileExtension]
-	else:
-		raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')
+	episodeFileName = [rawSettings['Episode Output Directory'], '/Season-', episodeData['Season'], '/C', episode[0], 'D', episode[1], 'T', episode[2], '_S', episodeData['Season'], 'E', episodeData['Episode'], ' - ', episodeData['Name'], fileExtension]
 
 
 	# make sure all elements are strings
@@ -106,14 +81,7 @@ def getEpisodeInformation(episode):
 
 
 def makeEpisodeFile(episode):
-	if environment == 'Unix':
-		# Unix file path
-		fileTemplate = ['cases', ['/case', ''], ['/disk', ''], '.yml']
-	elif environment == 'Windows':
-		# Windows file path
-		fileTemplate = ['cases', ['\\case', ''], ['\\disk', ''], '.yml']
-	else:
-		raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')
+	fileTemplate = ['cases', ['/case', ''], ['/disk', ''], '.yml']
 	
 	for i in range(2):
 		fileTemplate[i + 1][1] = episode[i]

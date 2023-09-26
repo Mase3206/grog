@@ -1,0 +1,12 @@
+Format: av_mkv
+Extension: .mkv
+
+Encoder: x265
+Encoder Preset: veryslow
+Encoder Tune: animation
+Encoder Profile: main
+Encoder Level: auto
+
+Constant Quality: 18
+Framerate: 23.976
+Constant Framerate: Yes

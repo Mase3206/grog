@@ -8,16 +8,6 @@ def sendCommands():
 	for i in range(episodeQty):
 		if episodes[i] != ['case', 'disk', 'title']:
 			cmd = getCommands.allEpisodes(episodeQty, i + 1)
-
-			"""if environment == 'Unix':
-				logFileName = ''.join(['logs/', '-'.join(episodes[i]), '.log'])
-			elif environment == 'Windows':
-				logFileName = ''.join(['logs\\', '-'.join(episodes[i]), '.log'])
-			else:
-				raise ValueError('Environment variable set to illegal value in `settings.yml`. Only "Windows" and "Unix" are accepted values.')"""
-			
-			
-
 			if cmd != False:
 				print('\nLog: Running "' + ' '.join(cmd) + '"')
 				#output = Popen(["mycmd", "myarg"], stdout=PIPE).communicate()[0]
@@ -51,12 +41,11 @@ def main():
 def start():
 	print("\n\n *** HandBrake TV Show Transcode Automator *** ")
 	
-	global rawSettings, prettySettings, episodeQty, episodes, environment
+	global rawSettings, prettySettings, episodeQty, episodes
 	# get current settings
 	rawSettings, prettySettings = settings.getSettings(False)
-	environment = rawSettings['Environment']
 
-	with open(rawSettings['Episode List Location'], 'r') as csvfile1:
+	with open('/'.join([rawSettings['Episode Output Directory'], rawSettings['Episode List Name']]), 'r') as csvfile1:
 		episodeList = csv.reader(csvfile1, delimiter=',')
 		episodes = []
 
