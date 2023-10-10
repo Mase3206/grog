@@ -1,4 +1,6 @@
-# Automated HandBrake Batch Ripping
+# HandBrake Auto-Transcode
+
+Designed for automated HandBrake batch ripping of TV shows
 
 This program grabs information from various YAML files and one CSV file and sends a command to HandBrakeCLI based on that information to rip specified titles off of disk images. It is designed specifically to speed up the ripping of TV show collector's editions on DVDs or Blu-Rays, using the syntax of c#d#t#.iso:
 - c# = case number
