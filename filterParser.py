@@ -1,6 +1,6 @@
 import yaml, reformat
 
-def combDetect(settings):
+def combDetect(settings: dict):
 	# mode=m:spatial-metric=s:motion-thresh=m:spatial-thresh=s:filter-mode=f:block-thresh=b:block-width=b:block-height=b:disable=d
 
 	if bool(settings['Status']) != False:
@@ -24,7 +24,7 @@ def combDetect(settings):
 
 
 
-def decomb(settings):
+def decomb(settings: dict):
 	# mode=m:magnitude-thresh=m:variance-thresh=v:laplacian-thresh=l:dilation-thresh=d:erosion-thresh=e:noise-thresh=n:search-distance=s:postproc=p:parity=p
 
 	if bool(settings['Status']) != False:
@@ -48,7 +48,7 @@ def decomb(settings):
 
 
 
-def denoise(settings):
+def denoise(settings: dict):
 	def hqdn3d(settings, subsettings):
 		if settings['Preset'] == 'custom':
 			values = ['--hqdn3d=y-spatial=', '', ':cb-spatial=', '', ':cr-spatial=', '', ':y-temporal=', '', ':cb-temporal=', '', ':cr-temporal=', '']
@@ -68,7 +68,7 @@ def denoise(settings):
 			return ['--hqdn3d=', subsettings['Preset']]
 		
 
-	def nlmeans(settings, subsettings):
+	def nlmeans(settings: dict, subsettings: dict):
 		if settings['Preset'] == 'custom':
 			values = ['--nlmeans=y-strength=', '', ':y-origin-tune=', '', ':y-patch-size=', '', ':y-range=', '', ':y-frame-count=', '', ':y-prefilter=', '', ':cb-strength=', '', ':cb-origin-tune=', '', ':cb-patch-size=', '', ':cb-range=', '', ':cb-frame-count=', '', ':cb-prefilter=', '', ':cr-strength=', '', ':cr-origin-tune=', '', ':cr-patch-size=', '', ':cr-range=', '', ':cr-frame-count=', '', ':cr-prefilter=', '', ':threads=', '']
 			keys = ['Strength', 'Origin Tune', 'Patch Size', 'Range', 'Frame Count', 'Pre-filter']

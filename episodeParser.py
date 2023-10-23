@@ -20,7 +20,7 @@ rawSettings, prettySettings = settings.getSettings(False)
 
 
 
-def makeDiskName(episode):
+def makeDiskName(episode: list):
 	# Unix file path
 	diskName = ['disks/c', episode[0], 'd', episode[1], '.iso']
 	return ''.join(diskName)
@@ -28,7 +28,7 @@ def makeDiskName(episode):
 	
 
 
-def makeFileName(episode, episodeData):
+def makeFileName(episode: list, episodeData: dict):
 	episodeFileName = [rawSettings['Episode Output Directory'], '/Season-', episodeData['Season'], '/C', episode[0], 'D', episode[1], 'T', episode[2], '_S', episodeData['Season'], 'E', episodeData['Episode'], ' - ', episodeData['Name'], fileExtension]
 
 
@@ -39,7 +39,7 @@ def makeFileName(episode, episodeData):
 	return ''.join(episodeFileName)
 
 
-def joinArgs(episodeData, sortedListEpisodeData):
+def joinArgs(episodeData: dict, sortedListEpisodeData: list):
 	defaultArgs = ['-i', '', '-t', '', '-c', '', '-o', '', '-f', '']
 	newArgs = defaultArgs
 	
@@ -52,7 +52,7 @@ def joinArgs(episodeData, sortedListEpisodeData):
 	return newArgs
 
 
-def getEpisodeInformation(episode):
+def getEpisodeInformation(episode: list):
 	with open(makeEpisodeFile(episode), 'r') as file1:
 		episodeInformation = yaml.safe_load(file1)
 	
@@ -80,7 +80,7 @@ def getEpisodeInformation(episode):
 	return joinArgs(episodeData, sortedListEpisodeData)
 
 
-def makeEpisodeFile(episode):
+def makeEpisodeFile(episode: list):
 	fileTemplate = ['cases', ['/case', ''], ['/disk', ''], '.yml']
 	
 	for i in range(2):
@@ -90,7 +90,7 @@ def makeEpisodeFile(episode):
 	return ''.join(fileTemplate)
 
 
-def getEpisodeCommand(episode): # [case, disk, title]
+def getEpisodeCommand(episode: list): # [case, disk, title]
 	for i in range(3):
 		episode[i] = str(episode[i])
 

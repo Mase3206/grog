@@ -1,4 +1,4 @@
-import yaml, settings, filterParser
+import yaml, settings
 
 rawSettings, prettySettings = settings.getSettings(False)
 fetchedSettings = []

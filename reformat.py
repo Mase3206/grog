@@ -1,16 +1,14 @@
-def combineArgs(lst,argument):
+def combineArgs(lst: list, argument: int):
 	temp = []
 	for i in range(len(lst)):
 		temp.append(lst[i][argument])
 	return temp
 
 
-def lst2str(superlist):
+def group(superlist: list):
 	rawArgs = superlist
 	groupedArgs = []
 	zippedArgs = []
-	
-	rnge = len(superlist[0])
 
 	# grab all related arguments `i` from each sublist of rawArgs, add to a new sublist in groupedArgs
 	for i in range(len(rawArgs[0])):
@@ -28,14 +26,14 @@ def lst2str(superlist):
 	return zippedArgs
 
 
-def dic2lstlst(dic):
+def dic2lstlst(dic: dict):
 	keys = list(dic.keys())
 	values = list(dic.values())
 	
 	return list(map(list, zip(keys, values)))
 
 
-def prettyDic(dic, new):
+def prettyDic(dic: dict, new: bool):
 	lstlst = dic2lstlst(dic)
 	out = []
 	for i in range(len(lstlst)):
@@ -54,7 +52,7 @@ def prettyDic(dic, new):
 		return ''.join(['\nCurrent settings: \n', out])
 
 
-def allStr(lst):
+def allStr(lst: list):
 	if type(lst) != list:
 		lst = [lst]
 
@@ -63,3 +61,9 @@ def allStr(lst):
 
 	return lst
 		
+
+def assembleArgs(options: list, values: list):
+	temp = []
+	for i in range(len(options)):
+		temp.append(options[i])
+		temp.append(values[i])

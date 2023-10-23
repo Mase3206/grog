@@ -1,6 +1,4 @@
 import getCommands, settings, csv, subprocess
-from time import sleep
-
 
 
 
@@ -11,7 +9,7 @@ def sendCommands():
 			if cmd != False:
 				print('\nLog: Running "' + ' '.join(cmd) + '"')
 				#output = Popen(["mycmd", "myarg"], stdout=PIPE).communicate()[0]
-				log = subprocess.run(cmd, stdout=subprocess.PIPE)#.communicate()[0]
+				log = subprocess.run(cmd, stdout=subprocess.PIPE)#.communicate()[0]		#TODO: make logging work - issue #7
 				print('Log:', episodes[i], 'is finished.\n')
 			else:
 				print('\nLog:', episodes[i], 'was set to not rip. If you would like to rip it, set "Rip: " to "True" in its associated .yml file.\n')

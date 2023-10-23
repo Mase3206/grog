@@ -1,4 +1,4 @@
-import csv, yaml, settings, audioParser, episodeParser, videoParser, filterParser
+import csv, settings
 from audioParser import getAudioTrackCommand as audio
 from episodeParser import getEpisodeCommand as episode
 from videoParser import getVideoCommand as video
@@ -9,10 +9,9 @@ from dimensionParser import getDimensionCommand as dim
 
 
 
-def allEpisodes(numberOfEpisodes, episodeNumber):
+def allEpisodes(episodeNumber: int):
 	episodes = []
 	episodeParameters = []
-	audioParameters = []
 
 	# set this for each series
 	rawSettings, prettySettings = settings.getSettings(False)
@@ -50,4 +49,4 @@ if __name__ == '__main__':
 	#print('\nThis program is not meant to be run directly. Please instead call the functions within this program from another.\nExiting...\n')
 	#exit(0)
 
-	print('\n', allEpisodes(5, 3), '\n')
+	print('\n', allEpisodes(3), '\n')

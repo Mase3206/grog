@@ -11,7 +11,7 @@ def main():
 	getChoice()
 
 
-def getSettings(new): # if displaying "new" values, set arg to `True`
+def getSettings(new: bool): # if displaying "new" values, set arg to `True`
 	with open('settings.yml', 'r') as setFile:
 		readSettings = yaml.safe_load(setFile)
 

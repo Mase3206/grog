@@ -14,7 +14,7 @@ with open('profiles/audio.yml', 'r') as file1:
 
 
 
-def getAudioTrackParams(trackNumber):
+def getAudioTrackParams(trackNumber: int):
 	trackList = ['Track', str(trackNumber)]
 	track = ' '.join(trackList)
 	out = []
@@ -26,14 +26,8 @@ def getAudioTrackParams(trackNumber):
 
 	return out
 
-def combineArgs(lst,argument):
-	temp = []
-	for i in range(len(lst)):
-		temp.append(lst[i][argument])
-	return temp
 
-
-def getAudioTrackCommand(totalTracks):
+def getAudioTrackCommand(totalTracks: int):
 	outputArgs = ['-a','','-E','','-B','','-6','','-A','']
 	rawArgs = []
 	
@@ -41,17 +35,8 @@ def getAudioTrackCommand(totalTracks):
 	for i in range(totalTracks):
 		rawArgs.append(getAudioTrackParams(i+1))
 
-	"""# grab all related arguments `i` from each sublist of rawArgs, add to a new sublist in groupedArgs
-	for i in range(len(rawArgs[0])):
-		groupedArgs.append(combineArgs(rawArgs,i))
-	
-	# convert all list items to strings
-	for i in range(len(groupedArgs)):
-		for j in range(len(groupedArgs[0])):
-			groupedArgs[i][j] = str(groupedArgs[i][j])"""
-
 	# combine each sublist of related arguments into one string separated by a comma
-	zippedArgs = reformat.lst2str(rawArgs)
+	zippedArgs = reformat.group(rawArgs)
 	
 	# put groupedArgs items into the correct place in outputArgs
 	for i in range(len(zippedArgs)):
