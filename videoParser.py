@@ -1,4 +1,4 @@
-import yaml, settings, filterParser
+import yaml, settings, reformat
 
 rawSettings, prettySettings = settings.getSettings(False)
 fetchedSettings = []
@@ -28,8 +28,7 @@ def getVideoCommand():
 	fetchedSettings.append(str(video['Constant Quality']))
 	fetchedSettings.append(str(video['Framerate']))
 
-	for i in range(len(fetchedSettings)):
-		outputArgs[i*2+1] = fetchedSettings[i]
+	outputArgs = reformat.assemble(outputArgs, fetchedSettings)
 	
 	if bool(video['Constant Framerate']) == True:
 		outputArgs.append('--cfr')

@@ -2,6 +2,10 @@ import yaml
 
 # pictureOutputArgs = ['-w', '', '-h', '', '--crop-mode', 'none', '--auto-anamorphic']
 
+class SettingError:
+	Exception
+
+
 
 def getDimensionCommand():
 	with open('profiles/dimensions.yml', 'r') as file1:
@@ -39,8 +43,12 @@ def getDimensionCommand():
 	elif bool(dimensions['Anamorphic']) == False:
 		fetchedSettings.append('--non-anamorphic')
 	else:
-		raise ValueError('profiles/dimensions.yml - Anamorphic is set to ' + fetchedSettings['Anamorphic'] + '. Only "off" and "auto" are currently supported.')
+		raise SettingError('profiles/dimensions.yml - Anamorphic is set to ' + fetchedSettings['Anamorphic'] + '. Only "off" and "auto" are currently supported.')
 
 
 
 	return fetchedSettings
+
+
+if __name__ == "__main__":
+	print(getDimensionCommand())

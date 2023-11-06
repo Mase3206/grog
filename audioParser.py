@@ -4,10 +4,6 @@ rawSettings, prettySettings = settings.getSettings(False)
 
 
 
-if __name__ == '__main__':
-	print('\nThis program is not meant to be run directly. Please instead call the functions within this program from another.\nExiting...\n')
-	exit(0)
-
 
 with open('profiles/audio.yml', 'r') as file1:
 	defaultAudio = yaml.safe_load(file1)
@@ -26,12 +22,6 @@ def getAudioTrackParams(trackNumber):
 
 	return out
 
-def combineArgs(lst,argument):
-	temp = []
-	for i in range(len(lst)):
-		temp.append(lst[i][argument])
-	return temp
-
 
 def getAudioTrackCommand(totalTracks):
 	outputArgs = ['-a','','-E','','-B','','-6','','-A','']
@@ -41,22 +31,14 @@ def getAudioTrackCommand(totalTracks):
 	for i in range(totalTracks):
 		rawArgs.append(getAudioTrackParams(i+1))
 
-	"""# grab all related arguments `i` from each sublist of rawArgs, add to a new sublist in groupedArgs
-	for i in range(len(rawArgs[0])):
-		groupedArgs.append(combineArgs(rawArgs,i))
-	
-	# convert all list items to strings
-	for i in range(len(groupedArgs)):
-		for j in range(len(groupedArgs[0])):
-			groupedArgs[i][j] = str(groupedArgs[i][j])"""
-
 	# combine each sublist of related arguments into one string separated by a comma
 	zippedArgs = reformat.lst2str(rawArgs)
 	
 	# put groupedArgs items into the correct place in outputArgs
-	for i in range(len(zippedArgs)):
-		outputArgs[i*2+1] = zippedArgs[i]
+	outputArgs = reformat.assemble(outputArgs, zippedArgs)
 
-	return outputArgs
+	return reformat.assemble(outputArgs, zippedArgs)
 
-#print(getAudioTrackCommand(3))
+
+if __name__ == "__main__":
+	print(getAudioTrackCommand(3))

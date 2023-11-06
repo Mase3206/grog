@@ -1,11 +1,13 @@
-def combineArgs(lst,argument):
+
+
+def combineArgs(lst:list,argument:int):
 	temp = []
 	for i in range(len(lst)):
 		temp.append(lst[i][argument])
 	return temp
 
 
-def lst2str(superlist):
+def lst2str(superlist:list):
 	rawArgs = superlist
 	groupedArgs = []
 	zippedArgs = []
@@ -28,14 +30,14 @@ def lst2str(superlist):
 	return zippedArgs
 
 
-def dic2lstlst(dic):
+def dic2lstlst(dic:bool):
 	keys = list(dic.keys())
 	values = list(dic.values())
 	
 	return list(map(list, zip(keys, values)))
 
 
-def prettyDic(dic, new):
+def prettyDic(dic:dict, new:bool):
 	lstlst = dic2lstlst(dic)
 	out = []
 	for i in range(len(lstlst)):
@@ -56,6 +58,8 @@ def prettyDic(dic, new):
 
 def allStr(lst):
 	if type(lst) != list:
+		if type(lst) == dict:
+			raise TypeError('Function reformat.allStr does not accept dictionaries, but was given one.')
 		lst = [lst]
 
 	for i in range(len(lst)):
@@ -63,3 +67,9 @@ def allStr(lst):
 
 	return lst
 		
+
+def assemble(options:list, settings:list):
+	for i in range(len(settings)):
+		options[i*2+1] = settings[i]
+
+	return options
