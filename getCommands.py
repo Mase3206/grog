@@ -1,4 +1,4 @@
-import csv, yaml, settings, audioParser, episodeParser, videoParser, filterParser
+import csv, settings
 from audioParser import getAudioTrackCommand as audio
 from episodeParser import getEpisodeCommand as episode
 from videoParser import getVideoCommand as video
@@ -6,7 +6,8 @@ from filterParser import getFilterCommand as filtr
 from dimensionParser import getDimensionCommand as dim
 
 
-
+class SettingError:
+	Exception
 
 
 def allEpisodes(numberOfEpisodes, episodeNumber):
@@ -39,7 +40,7 @@ def allEpisodes(numberOfEpisodes, episodeNumber):
 		elif environment == 'Windows':
 			fullCommand = [rawSettings['HandBrakeCLI Executible Location']] + audio(numberOfAudioTracks) + episodeParameters + video() + filtr() + dim()
 		else:
-			raise ValueError(''.join['settings.yml [\'Environment\'] must be set to either Unix or Windows, not ', environment], '.\nHalting...')
+			raise SettingError(''.join['settings.yml [\'Environment\'] must be set to either Unix or Windows, not ', environment], '.\nHalting...')
 	else:
 		fullCommand = False
 

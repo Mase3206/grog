@@ -1,4 +1,4 @@
-import yaml, settings
+import yaml, settings, reformat
 
 # EXPECTED OUTPUT
 # ["-i", "disks/c1d1.iso", "-t", "3", "-c", "1-6", "-o", "Episodes/Season-1/C1D1T3_S1E1 - Tourist Trapped.mkv", "-f", "av_mkv", "-m"]
@@ -40,16 +40,14 @@ def makeFileName(episode, episodeData):
 
 
 def joinArgs(episodeData, sortedListEpisodeData):
-	defaultArgs = ['-i', '', '-t', '', '-c', '', '-o', '', '-f', '']
-	newArgs = defaultArgs
-	
-	for i in range(len(sortedListEpisodeData)):
-		newArgs[i*2+1] = sortedListEpisodeData[i]
+	outputArgs = ['-i', '', '-t', '', '-c', '', '-o', '', '-f', '']
+
+	outputArgs = reformat.assemble(outputArgs, sortedListEpisodeData)
 	
 	if episodeData['Keep Chapters'] == True:
-		newArgs.append('-m')
+		outputArgs.append('-m')
 	
-	return newArgs
+	return outputArgs
 
 
 def getEpisodeInformation(episode):
