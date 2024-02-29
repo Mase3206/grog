@@ -1,4 +1,4 @@
-# HandBrake Auto-Transcode
+# Grog
 
 Designed for automated HandBrake batch ripping of TV shows
 
